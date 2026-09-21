@@ -149,6 +149,13 @@ select {
     display: none;
     width: 35px;
     cursor: pointer;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    pointer-events: auto;
 }
 
 .menu-icon span {
@@ -1075,6 +1082,10 @@ select {
 
 @media (max-width: 768px) {
 
+    .header {
+        z-index: 10000;
+    }
+
     .nav-container {
         min-height: 75px;
         padding: 0 20px;
@@ -1091,13 +1102,20 @@ select {
 
     .menu-icon {
         display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10002;
+        pointer-events: auto;
+        touch-action: manipulation;
     }
 
     .navbar {
-        position: absolute;
+        position: fixed;
         top: 75px;
         left: 0;
         width: 100%;
+        z-index: 10001;
 
         background: #0b0b0b;
 
@@ -1110,12 +1128,15 @@ select {
 
         transition: max-height .4s ease;
         border-top: 1px solid #222;
+
+        pointer-events: auto;
     }
 
     .navbar a {
         padding: 16px 25px;
         border-bottom: 1px solid #222;
         font-size: 11px;
+        display: block;
     }
 
     .navbar a::after {
@@ -1124,6 +1145,7 @@ select {
 
     #menu-toggle:checked ~ .navbar {
         max-height: 500px;
+        overflow-y: auto;
     }
 
     #menu-toggle:checked + .menu-icon span:nth-child(1) {
@@ -1313,6 +1335,20 @@ select {
 
     .menu-icon {
         width: 30px;
+        position: fixed;
+        top: 20px;
+        right: 16px;
+        z-index: 10002;
+        pointer-events: auto;
+        touch-action: manipulation;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        z-index: 10001;
     }
 
     .hero {
